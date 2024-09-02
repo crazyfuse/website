@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static HedgeDoc</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="js/hljs/styles/github.min.css">
+    <link rel="stylesheet" href="css/github-extract.css">
+    <link rel="stylesheet" href="css/markdown.css">
+    <link rel="stylesheet" href="css/static-hedgedoc.css">
+    <script type="importmap">
+        {
+            "imports" : {
+                "markdown-it": "./js/markdown-it",
+                "mdurl": "./js/mdurl",
+                "linkify-it": "./js/linkify-it",
+                "punycode.js": "./js/punycodejs/punycode.es6.js",
+                "uc.micro": "./js/ucmicro",
+                "entities": "./js/entities",
+                "html-entities": "./js/html-entities/lib",
+                "@mrdrogdrog/optional": "./js/optional",
+                "hedgedoc-markdown-plugins": "./js/hedgedoc-markdown-plugins",
+                "markdown-it-emoji": "./js/markdown-it-emoji",
+                "markdown-it-regexp": "./js/markdown-it-regexp",
+                "markdown-it-container": "./js/markdown-it-container",
+                "markdown-it-abbr": "./js/markdown-it-abbr",
+                "markdown-it-footnote": "./js/markdown-it-footnote",
+                "markdown-it-mark": "./js/markdown-it-mark",
+                "markdown-it-sub": "./js/markdown-it-sub",
+                "markdown-it-sup": "./js/markdown-it-sup",
+                "markdown-it-ins": "./js/markdown-it-ins",
+                "markdown-it-deflist": "./js/markdown-it-deflist",
+                "markdown-it-for-inline": "./js/markdown-it-for-inline",
+                "markdown-it-anchor": "./js/markdown-it-anchor",
+                "hljs": "./js/hljs/es/core.min.js",
+                "lean-qr": "./js/lean-qr/build/index.mjs",
+                "lean-qr-svg": "./js/lean-qr/build/extras/svg.mjs",
+                "papaparse": "./js/papaparse.min.mjs",
+                "mermaid": "./js/mermaid/mermaid.esm.min.mjs"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="markdown-body" class="markdown-body container-fluid">
+    </div>
+    <script src="js/markdown-it-multimd-table/dist/markdown-it-multimd-table.js"></script>
+    <script type="module" src="js/static-hedgedoc.js"></script>
+    <script type="module">
+        // Get content from test.md file using fetch
+        fetch('mainpage.md')
+            .then(response => response.text())
+            .then(text => {
+                // Convert Markdown to HTML
+                const html = window.md.render(text)
+
+                // Add html in the div with id markdown-body
+                document.getElementById('markdown-body').innerHTML = html
+
+                window.md.postProcess()
+            })
+    </script>
+</body>
+
+</html>
