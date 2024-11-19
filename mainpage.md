@@ -51,7 +51,7 @@ This diagram aims to show how Crazyfuse is implemented. There will be 4 github r
 4. [Crazyfuse Windows bits](https://github.com/crazyfuse/internal_api_windows), the Windows specifics to handle this Crazyfuse API.
 
 :::info
-None of these repositories currently contain code! Development of these repositories is in progress but a first push will only be done when an example implementation works without code changes (only a recompile to the target platform should be required). This push of all 4 repositories will be done on or before **November 11th 2024**.
+None of these repositories currently contain code! Development of these repositories is in progress but a first push will only be done when an example implementation works without code changes (only a recompile to the target platform should be required). As of 19th november 2024, there has been quite a bit of progress but nowhere near a usable proof of concept. An initial code push (origionally planned for nov. 11th 2024) will be done when there is some usable code. This now is likely in Q1 of 2025.
 :::
 
 The last row in the diagram shows potential projects that would benefit from having a `Crazyfuse API` implementation. Initially development will focus on a `Smart Contract` and `IPFS` implementation. Smart contracts expose data that you might want to use on a system level. Once you have access to that data then any programming language or application to can access your filesystem can access smart contract data and thereby opening up many new posibilities that whithout it are hard or even impossible. IPFS already gives access to (file-like) data so it makes sense to have this be accessible natively on your host.
