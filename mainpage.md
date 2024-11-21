@@ -80,7 +80,7 @@ This project currently is a hobby project and self-funded. I very much welcome i
 
 ## License
 
-Crazyfuse will be developed under the MIT license and hosted on GitHub. User contributions and feedback are encouraged and essential for the project's long-term success.
+Crazyfuse will be developed under the [MIT-0](https://opensource.org/license/mit-0) license and hosted on GitHub. User contributions and feedback are encouraged and essential for the project's long-term success.
 
 ## Conclusion
 
